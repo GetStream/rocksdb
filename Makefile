@@ -327,8 +327,11 @@ ifeq ($(PLATFORM), OS_OPENBSD)
 endif
 
 ifndef DISABLE_WARNING_AS_ERROR
-	WARNING_FLAGS += -Werror
+ifndef __APPLE__
+   WARNING_FLAGS += -Werror
 endif
+endif
+
 
 
 ifdef LUA_PATH
